@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body{
+        padding: 25px;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHoVhOFZxrD5H_C8hBNTee06TyNYWVOrOdFg&s");
+      }
+        
+      .header{
+        height: 100px;
+        background: linear-gradient(45deg, #3494E6, #EC6EAD);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        animation: headerColorShift 5s infinite;
+        border: 10px solid black;
+      }
+      
+      @keyframes headerColorShift {
+        from { background: linear-gradient(45deg, #3494E6, #EC6EAD); }
+        to { background: linear-gradient(45deg, #EC6EAD, #3494E6); }
+      }
+      .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+      .image-container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      .image-container img{
+        width: 100%;
+        height : 100%;
+      }
+      .image-container:hover img {
+        transform: scale(1.1);
+      }
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .image-container:hover .image-overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="header">
+        <h1>Global travel guide</h1>
+      </div>
+      
+      <div class="gallery">
+        <div class="image-container">
+            <a href="https://www.paris.fr/en" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQdO4DtuunQPlKMWDqVzMlN5vf55bWmOA1o8G3I6-grzhsLiyTxytJPLjrcpbn1nIMoFIDLDmwCvD4oLcGk4GdT9cqX1r16atg3y_Jg8Q" alt="Paris">
+                <div class="image-overlay">
+                    <h3>Paris, France</h3>
+                    <p>City of Lights</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="image-container">
+            <a href="https://www.japan.travel/en/" target="_blank">
+                <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQNRL7ItW4dHTN-QzFqJJVjxP8jq38f8w59sdNo3NjLojdLjr5NdPdSAnv9b2Y_hnUOgAqeDqgFmkHj11kQn6umk1UIN8iOakkRC-LfqA" alt="Tokyo">
+                <div class="image-overlay">
+                    <h3>Tokyo, Japan</h3>
+                    <p>Modern Metropolis</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="image-container">
+            <a href="https://www.gadventures.com/" target="_blank">
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRTIi151rEaholQ55CNIcDzo1BL33H_9UrHd-Wp_QqJ2fo8_7h9P8Q0jJfkx_7c3swUdolxLRT_uftyPbOg6wRAwKG8ej0TS_Cfqy6rZg" alt="Sydney">
+                <div class="image-overlay">
+                    <h3>Bejing, China</h3>
+                    <p>Magnificent Landscape</p>
+                </div>
+            </a>
+        </div>
+    </div>
+  </body>
+</html>
